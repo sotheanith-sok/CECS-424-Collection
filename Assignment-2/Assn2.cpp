@@ -13,7 +13,7 @@ int main(int argc, char **argv) {
        if(regex_match(line,e)){
          cout<<"Matched: "<<line<<endl;
        }else{
-          cout<<"Not matched: "<<line<<endl;
+          cout<<"Not Matched: "<<line<<endl;
        }
     }
     out.close();
