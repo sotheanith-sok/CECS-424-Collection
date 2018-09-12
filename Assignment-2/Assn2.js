@@ -1,21 +1,24 @@
+//author: Sotheanith Sok
+//Imports
 const fs = require('fs');
-const readLine=require('readline');
-const stream=require('stream');
+const readline=require('readline');
 
-const file = process.argv[2];
-const regex = /^[$][*]*([0-9]|(([1-9][0-9]?[0-9]?)([,][0-9][0-9][0-9])*))([[.][0-9][0-9]]*)?$/gm;
+//Define regex
+const regex = new RegExp('^\\$\\**(0|(([1-9][0-9]?[0-9]?)(,[0-9][0-9][0-9])*))((\\.[0-9][0-9])*)?$');
 
-let instream=fs.createReadStream('./'+file);
-let outstream= new stream;
-let rl = readLine.createInterface(instream, outstream);
+//Create read stream
+const rl = readline.createInterface({
+  input: fs.createReadStream('./'+process.argv[2]),
+  crlfDelay: Infinity
+});
 
-let arr =[];
-
-rl.on('line', (line)=>{
-   let result = regex.test(line);
-   if(result){
+//Compare and print out result
+var result;
+rl.on('line', (line) => {
+     result = regex.test(line);
+    if(result){
        console.log('Matched: '+line);
-   }else{
+    }else{
        console.log('Not Matched: '+line);
-   }
+    }
 });
