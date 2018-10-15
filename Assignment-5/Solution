@@ -1,3 +1,5 @@
+Author: Sotheanith Sok
+
 1. Evaluate the following λ expression
     a.  ((λx.λy.(y x) λp.λq.p) λi.i)
         (λy.(y λp.λq.p) λi.i)
