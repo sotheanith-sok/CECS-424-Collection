@@ -1,0 +1,80 @@
+1. Evaluate the following λ expression
+    a.  ((λx.λy.(y x) λp.λq.p) λi.i)
+        (λy.(y λp.λq.p) λi.i)
+        λi.i λp.λq.p
+        λp.λq.p
+
+    b.  (((λx.λy.λz.((x y) z) λf.λa.(f a)) λi.i) λj.j)
+        ((λy.λz.((λf.λa.(f a) y) z) λi.i) λj.j)
+        ((λf.λa.(f a) λi.i) λj.j)
+        (λa.(λi.i a) λj.j) 
+        (λi.i λj.j)
+        λj.j
+
+    c.  (λh.((λa.λf.(f a) h) h) λf.(f f))
+        (λh.(λf.(f h) h) λf.(f f))
+        (λh.(h h) λf.(f f))
+        (λf.(f f) λf.(f f))
+        (λf.(f f) λf.(f f))
+        (λf.(f f) λf.(f f))
+        ...Infinite Loop
+    
+    d.  ((λp.λq.(p q) (λx.x λa.λb.a)) λk.k)
+        ((λp.λq.(p q) (λa.λb.a)) λk.k)
+        (λq.((λa.λb.a) q) λk.k)
+        ((λa.λb.a) λk.k)
+        (λb.λk.k) 
+    
+    //Check if this one is right
+    e.  (((λf.λg.λx.(f (g x)) λs.(s s)) λa.λb.b) λx.λy.x)
+        (((λg.λx.(λs.(s s) (g x))) λa.λb.b) λx.λy.x)
+        (λx.(λs.(s s) (λa.λb.b x))  λx.λy.x)
+        (λs.(s s) (λa.λb.b λx.λy.x))
+        (λs.(s s) (λb.b))
+        (λb.b λb.b)
+        λb.b
+2. Define a function:
+    a.  def make triplet = λf.λs.λt.λfunc.(((func f) s) t)
+    b.  def triplet first = λfirst.λsecond.λthird.first
+    c.  def triplet second = λfirst.λsecond.λthird.second
+    d.  def triplet third = λfirst.λsecond.λthird.third
+        
+3. Use α conversion to ensure unique names in the expressions in each of the following λ expressions:
+    a.  λx.λy.(λx.y λy.x)
+        λx.λy.(λa.y λb.x)
+
+    b.  λx.(x (λy.(λx.x y) x))
+        λx.(x (λy.(λa.a y) x))
+
+    c.  λa.(λb.a λb.(λa.a b))
+        λa.(λb.a λc.(λx.x c))
+
+    d.  (λfree.bound λbound.(λfree.free bound))
+        (λfree.bound λa.(λb.b a))
+
+    e.  λp.λq.(λr.(p (λq.(λp.(r q)))) (q p))
+        λp.λq.(λr.(p (λa.(λp.(r a)))) (q p))
+
+4. Define a λ calculus representation for implication:
+    def implies = λx.λy((x y) true)
+
+5. Define a λ calculus representation for equivalence:
+    def equiv = λx.λy((x y) ((y false) true))
+
+6. Write a function that finds the product of the numbers between n and one:
+    def prod1 f n = 
+        if (n==0) then f
+        else prod1 (mult f n) (pred n)
+
+
+
+
+
+
+
+
+
+
+
+
+
