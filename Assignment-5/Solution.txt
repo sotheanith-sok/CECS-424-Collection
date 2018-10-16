@@ -1,4 +1,6 @@
 Author: Sotheanith Sok
+Date: 10/16/2018
+Assignment 5
 
 1. Evaluate the following λ expression
     a.  ((λx.λy.(y x) λp.λq.p) λi.i)
