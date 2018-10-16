@@ -64,9 +64,10 @@ Author: Sotheanith Sok
     def equiv = λx.λy((x y) ((y false) true))
 
 6. Write a function that finds the product of the numbers between n and one:
-    def prod1 f n = 
-        if (n==0) then f
-        else prod1 (mult f n) (pred n)
+    rec prod n = 
+        if isone n then f
+        else prod (mult n (pred n))
+
 
 
 

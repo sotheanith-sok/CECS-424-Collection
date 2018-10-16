@@ -44,6 +44,17 @@ sub' x y
     | y == 0 = x
     | otherwise = sub (pred x) (pred y)
 
+
+prod :: Int -> Int
+prod n =    
+    if n == 1 then 1
+    else mult (n) (prod (pred n))
+
+prod1 :: Int -> Int
+prod1 n =    
+    if n == 1 then 1
+    else prod1 (mult n (pred n))
+
 main = do
     print (add 1 5)
     print (add' 3 2)
@@ -53,3 +64,5 @@ main = do
     print (power' 3 3)
     print (sub 1 3)
     print (sub 1 10)
+    print (prod 5)
+    print (prod1 5)
