@@ -28,8 +28,7 @@ Assignment 5
         (λq.((λa.λb.a) q) λk.k)
         ((λa.λb.a) λk.k)
         (λb.λk.k) 
-    
-    //Check if this one is right
+
     e.  (((λf.λg.λx.(f (g x)) λs.(s s)) λa.λb.b) λx.λy.x)
         (((λg.λx.(λs.(s s) (g x))) λa.λb.b) λx.λy.x)
         (λx.(λs.(s s) (λa.λb.b x))  λx.λy.x)
@@ -60,24 +59,15 @@ Assignment 5
         λp.λq.(λr.(p (λa.(λp.(r a)))) (q p))
 
 4. Define a λ calculus representation for implication:
-    def implies = λx.λy((x y) true)
+    def implies = λx.λy.((x y) true)
 
 5. Define a λ calculus representation for equivalence:
-    def equiv = λx.λy((x y) ((y false) true))
+    def equiv = λx.λy.((x y) (not y))
 
 6. Write a function that finds the product of the numbers between n and one:
     rec prod n = 
-        if isone n then f
+        if isone n then 1
         else prod (mult n (pred n))
-
-
-
-
-
-
-
-
-
 
 
 
