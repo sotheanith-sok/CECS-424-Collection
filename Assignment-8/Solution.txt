@@ -1,0 +1,26 @@
+1.  Translate the following expression into postfix and prefix notation
+    (b ∗ b − 4 ∗ a + c)/(2 ∗ a)
+    Answer: 
+            Prefix notation: 
+                / + - * b b * 4 a c * 2 a
+            Postfix notation: 
+                b b * 4 a * - c + 2 a * /
+2.  Consider the following program in C++. What will be the final values
+    of fp count and int count? Why?
+    
+    int fp_count = 0, int_count = 0;
+    for (float i = 0; i < 1; i += 0.01) {
+        fp_count++;
+    }
+    for (int i = 0; i < 100; i += 1) {
+        int_count++;
+    }
+    Anwer:
+        The final outputs of fp_count is 101 and int_count is 100. 
+        The reason why the final fp_count is 101 instead of 100 is
+        due to the rounding error that occur when a computer try to convert
+        fraction as binary value. It is impossible for a computer to store accurate 
+        value of some numbers such as fraction.  
+
+
+
