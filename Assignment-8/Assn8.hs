@@ -20,9 +20,15 @@ tailFib n = loop n 0 1
     where loop n' f1 f2
             | n' == 0 = f1
             | otherwise = loop(n'-1) (f2) (f1+f2) 
+tailSum :: Int -> Int
+tailSum n = loop n 1
+    where loop n' acc
+            | n' == 1 = acc
+            | otherwise = loop (n'-1) (acc + n')
 
 main = do
     print (fac 10)
     print (tailFac 10)
-    print (fib 20)
-    print (tailFib 20)
+    print (fib 10)
+    print (tailFib 10)
+    print (tailSum 100)
