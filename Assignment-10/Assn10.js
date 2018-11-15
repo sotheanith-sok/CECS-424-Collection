@@ -1,4 +1,3 @@
-const fs = require('fs');
 main()
 
 function main(){
@@ -20,25 +19,6 @@ function main(){
 	console.log("Number of positive floating point numbers: " + posFPs);
 	console.log("Number of floating point numbers between 0 and 1: " + zeroOneFPs);
 	console.log("Proportion (# of 0~1) / (# of positive): " + ((zeroOneFPs/posFPs) * 100.0) + "%");
-
-    if (process.argv.length != 3)
-	{
-		console.error("\niv. Pass the data file name");
-		return 0;
-	}
-    console.log("\niv. Floating point number distribution");
-    let lower = 0.0, upper, interval = 100.0;
-	for (let i = 0; i < 100; i++)
-	{
-        upper = lower + interval;
-        fs.appendFile(process.argv[2],countBetween(lower, upper)+'\n', (err)=>{
-            if(err){
-                console.error(err);
-            }
-        })
-		lower = upper;
-	}
-	console.log("The output file is ready. Execute \"Python3 Assn9.py " + process.argv[2] + "\"");
 }
 
 function convertToFloat(number) {
