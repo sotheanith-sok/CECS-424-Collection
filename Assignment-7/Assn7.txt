@@ -1,0 +1,9 @@
+Watch the attached video, Evolving a language in and for the real world (C++ 1991-2006).mov, and answer the questions.
+
+1. Complete the following find function in C++.
+template<class Iter, class T>
+Iter find(Iter first, Iter last, const T& val) {
+
+}
+
+2. Why did C++ succeed?
