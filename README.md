@@ -10,7 +10,7 @@ A collection of assignments for the CECS 424 class.
  - [Python](https://www.python.org/)
  - [Haskell](https://www.haskell.org/)
 
-## Author
+## Authors
  - [Sotheanith Sok](https://github.com/sotheanith)
 
 ## Course
