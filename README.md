@@ -11,7 +11,7 @@ A collection of assignments for the CECS 424 class.
  - [Haskell](https://www.haskell.org/)
 
 ## Authors
- - [Sotheanith Sok](https://github.com/sotheanith)
+ - [Sotheanith Sok](https://github.com/sotheanith-sok)
 
 ## Course
  - [CECS 424 - Organization of Programming Languages](https://web.csulb.edu/~artg/424/)
